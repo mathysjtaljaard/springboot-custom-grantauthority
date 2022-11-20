@@ -1,0 +1,20 @@
+---
+spring:
+  profiles:
+    active: local
+---
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          oauth0:
+            client-secret: ${OAUTH_CLIENT_SECRET}
+            client-id: ${OAUTH_CLIENT_ID}
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          oauth0:
+            issuer-uri: https://dev-h3dmd3t2.us.auth0.com/
